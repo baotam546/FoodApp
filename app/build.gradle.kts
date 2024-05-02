@@ -40,7 +40,7 @@ android {
 
 dependencies {
     val nav_version = "2.7.7"
-
+    val lifecycle_version = "2.7.0"
     implementation(libs.androidx.core.ktx)
     implementation(libs.androidx.appcompat)
     implementation(libs.material)
@@ -70,5 +70,9 @@ dependencies {
     //glide
     implementation ("com.github.bumptech.glide:glide:4.12.0")
 
+    //videoModel mvvm
+    implementation ("androidx.lifecycle:lifecycle-viewmodel-ktx:$lifecycle_version")
+    implementation ("androidx.lifecycle:lifecycle-livedata-ktx:$lifecycle_version")
+    implementation ("android.arch.lifecycle:extensions:1.1.1")
 
 }
