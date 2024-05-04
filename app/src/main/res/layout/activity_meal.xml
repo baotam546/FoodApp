@@ -10,7 +10,7 @@
     <com.google.android.material.appbar.AppBarLayout
         android:id="@+id/appbar"
         android:layout_width="match_parent"
-        android:layout_height="230dp"
+        android:layout_height="280dp"
         android:backgroundTint="@color/black"
         >
         <com.google.android.material.appbar.CollapsingToolbarLayout
@@ -35,7 +35,83 @@
                 />
         </com.google.android.material.appbar.CollapsingToolbarLayout>
     </com.google.android.material.appbar.AppBarLayout>
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="45dp">
+
+            <LinearLayout
+                android:id="@+id/linear_layout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <TextView
+                    android:id="@+id/tv_categoryInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:drawablePadding="5dp"
+                    android:text="Category : "
+                    android:textColor="@color/g_black"
+                    android:textSize="14sp"
+                    android:drawableLeft="@drawable/category"
+                     />
+
+                <TextView
+                    android:id="@+id/tv_areaInfo"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginStart="15dp"
+                    android:drawablePadding="5dp"
+                    android:drawableLeft="@drawable/baseline_add_location_24"
+                    android:text="Area : "
+                    android:textColor="@color/g_black"
+                    android:textSize="14sp"
+                   />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_instructions"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="- Instructions: "
+                app:layout_constraintStart_toStartOf="@+id/linear_layout"
+                app:layout_constraintTop_toBottomOf="@+id/linear_layout"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:fontFamily="@font/myfont"
+                android:textSize="@dimen/_15sdp"
+                />
+            <TextView
+                android:id="@+id/tv_instructionsInfo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="@+id/tv_instructions"
+                app:layout_constraintTop_toBottomOf="@+id/tv_instructions"
+                android:layout_marginTop="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_5sdp"
+                android:fontFamily="@font/myfont"
+                android:textSize="@dimen/_12sdp"
+                />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/btn_addToFavorite"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:src="@drawable/favorite_svgrepo_com"
@@ -46,10 +122,25 @@
         app:layout_anchorGravity="bottom|end"
         android:layout_marginEnd="10dp"
         />
-    <androidx.core.widget.NestedScrollView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        app:layout_behavior="com.google.android.material.appbar.AppBarLayout$ScrollingViewBehavior">
 
-    </androidx.core.widget.NestedScrollView>
+<ImageView
+    android:id="@+id/img_youtube"
+    android:layout_width="@dimen/_40sdp"
+    android:layout_height="@dimen/_40sdp"
+    android:layout_gravity="bottom|center"
+    android:src="@drawable/video"
+    android:layout_marginTop="@dimen/_10sdp"
+    android:layout_marginBottom="@dimen/_10sdp"
+    />
+    <com.google.android.material.progressindicator.LinearProgressIndicator
+        android:id="@+id/progress_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:indeterminate="true"
+        app:layout_anchor="@id/appbar"
+        app:layout_anchorGravity="bottom"
+        android:visibility="gone"
+        />
+
+
 </androidx.coordinatorlayout.widget.CoordinatorLayout>
